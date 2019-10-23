@@ -1,13 +1,13 @@
 {
   "name": "ember-add-listener-helper",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.1.0",
+  "description": "Easily and safely use `@ember/object/events` via a template helper",
   "keywords": [
     "ember-addon"
   ],
-  "repository": "",
+  "repository": "https://github.com/bendemboski/ember-add-listener-helper",
   "license": "MIT",
-  "author": "",
+  "author": "Ben Demboski",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -21,17 +21,17 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "ember-cli-babel": "^7.11.1",
-    "ember-cli-htmlbars": "^4.0.0"
+    "ember-cli-babel": "^7.11.1"
   },
   "devDependencies": {
     "@ember/optional-features": "^1.0.0",
     "babel-eslint": "^10.0.3",
     "broccoli-asset-rev": "^3.0.0",
+    "ember-auto-import": "^1.5.3",
     "ember-cli": "~3.13.1",
     "ember-cli-dependency-checker": "^3.1.0",
     "ember-cli-eslint": "^5.1.0",
-    "ember-cli-htmlbars-inline-precompile": "^3.0.0",
+    "ember-cli-htmlbars": "^4.0.0",
     "ember-cli-inject-live-reload": "^2.0.1",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-template-lint": "^1.0.0-beta.3",
@@ -48,7 +48,8 @@
     "eslint-plugin-ember": "^7.1.0",
     "eslint-plugin-node": "^10.0.0",
     "loader.js": "^4.7.0",
-    "qunit-dom": "^0.9.0"
+    "qunit-dom": "^0.9.0",
+    "sinon": "^7.5.0"
   },
   "engines": {
     "node": "8.* || >= 10.*"
