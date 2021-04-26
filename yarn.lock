@@ -1740,10 +1740,10 @@
     resolve "^1.8.1"
     semver "^7.3.2"
 
-"@embroider/test-setup@^0.37.0":
-  version "0.37.0"
-  resolved "https://registry.yarnpkg.com/@embroider/test-setup/-/test-setup-0.37.0.tgz#4c0590c8c3e45813dd53b8b551206acd0a49cefd"
-  integrity sha512-4jme5zEonjGvKeyVRygyXmooMuwmaa3nBiIxwbkRA6KWh0BLyZSqPwlQl93s7IT7S5PO5U9TqNiqI4yp2k5T7Q==
+"@embroider/test-setup@^0.40.0":
+  version "0.40.0"
+  resolved "https://registry.yarnpkg.com/@embroider/test-setup/-/test-setup-0.40.0.tgz#bff8e7d780c1ba1a349f9e51605c9668a8f2c65d"
+  integrity sha512-Ukk7KDviBd7Ro181WPGp+Sk/fZpD7Os0tJ5msf/2TsCUL631cAQKkUqGjQsva+jJYQnqbB3pxF1fR5fnY3x3ug==
   dependencies:
     lodash "^4.17.20"
     resolve "^1.17.0"
@@ -1984,29 +1984,28 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
-"@sinonjs/commons@^1", "@sinonjs/commons@^1.3.0", "@sinonjs/commons@^1.4.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@sinonjs/commons/-/commons-1.6.0.tgz#ec7670432ae9c8eb710400d112c201a362d83393"
-  integrity sha512-w4/WHG7C4WWFyE5geCieFJF6MZkbW4VAriol5KlmQXpAQdxvV0p26sqNZOW6Qyw6Y0l9K4g+cHvvczR2sEEpqg==
+"@sinonjs/commons@^1.6.0", "@sinonjs/commons@^1.7.0", "@sinonjs/commons@^1.8.1":
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/@sinonjs/commons/-/commons-1.8.3.tgz#3802ddd21a50a949b6721ddd72da36e67e7f1b2d"
+  integrity sha512-xkNcLAn/wZaX14RPlwizcKicDk9G3F8m2nU3L7Ukm5zBgTwiT0wsoFAHx9Jq56fJA1z/7uKGtCRu16sOUCLIHQ==
   dependencies:
     type-detect "4.0.8"
 
-"@sinonjs/formatio@^3.2.1":
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/@sinonjs/formatio/-/formatio-3.2.2.tgz#771c60dfa75ea7f2d68e3b94c7e888a78781372c"
-  integrity sha512-B8SEsgd8gArBLMD6zpRw3juQ2FVSsmdd7qlevyDqzS9WTCtvF55/gAL+h6gue8ZvPYcdiPdvueM/qm//9XzyTQ==
+"@sinonjs/fake-timers@^6.0.0", "@sinonjs/fake-timers@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@sinonjs/fake-timers/-/fake-timers-6.0.1.tgz#293674fccb3262ac782c7aadfdeca86b10c75c40"
+  integrity sha512-MZPUxrmFubI36XS1DI3qmI0YdN1gks62JtFZvxR67ljjSNCeK6U08Zx4msEWOXuofgqUt6zPHSi1H9fbjR/NRA==
   dependencies:
-    "@sinonjs/commons" "^1"
-    "@sinonjs/samsam" "^3.1.0"
+    "@sinonjs/commons" "^1.7.0"
 
-"@sinonjs/samsam@^3.1.0", "@sinonjs/samsam@^3.3.3":
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/@sinonjs/samsam/-/samsam-3.3.3.tgz#46682efd9967b259b81136b9f120fd54585feb4a"
-  integrity sha512-bKCMKZvWIjYD0BLGnNrxVuw4dkWCYsLqFOUWw8VgKF/+5Y+mE7LfHWPIYoDXowH+3a9LsWDMo0uAP8YDosPvHQ==
+"@sinonjs/samsam@^5.3.1":
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/@sinonjs/samsam/-/samsam-5.3.1.tgz#375a45fe6ed4e92fca2fb920e007c48232a6507f"
+  integrity sha512-1Hc0b1TtyfBu8ixF/tpfSHTVWKwCBLY4QJbkgnE7HcwyvT2xArDxb4K7dMgqRm3szI+LJbzmW/s4xxEhv6hwDg==
   dependencies:
-    "@sinonjs/commons" "^1.3.0"
-    array-from "^2.1.1"
-    lodash "^4.17.15"
+    "@sinonjs/commons" "^1.6.0"
+    lodash.get "^4.4.2"
+    type-detect "^4.0.8"
 
 "@sinonjs/text-encoding@^0.7.1":
   version "0.7.1"
@@ -2573,11 +2572,6 @@ array-flatten@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/array-flatten/-/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
   integrity sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
-
-array-from@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/array-from/-/array-from-2.1.1.tgz#cfe9d8c26628b9dc5aecc62a9f5d8f1f352c1195"
-  integrity sha1-z+nYwmYoudxa7MYqn12PHzUsEZU=
 
 array-to-error@^1.0.0:
   version "1.1.1"
@@ -5253,10 +5247,10 @@ detect-newline@3.1.0:
   resolved "https://registry.yarnpkg.com/detect-newline/-/detect-newline-3.1.0.tgz#576f5dfc63ae1a192ff192d8ad3af6308991b651"
   integrity sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA==
 
-diff@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
-  integrity sha512-A46qtFgd+g7pDZinpnwiRJtxbC1hpgf0uzP3iG89scHk0AUC7A1TGxf5OiiOUv/JMZR8GOt8hL900hV0bOy5xA==
+diff@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/diff/-/diff-4.0.2.tgz#60f3aecb89d5fae520c11aa19efc2bb982aade7d"
+  integrity sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==
 
 diff@^5.0.0:
   version "5.0.0"
@@ -8819,6 +8813,11 @@ lodash.foreach@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.foreach/-/lodash.foreach-4.5.0.tgz#1a6a35eace401280c7f06dddec35165ab27e3e53"
   integrity sha1-Gmo16s5AEoDH8G3d7DUWWrJ+PlM=
 
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
+
 lodash.isarguments@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz#2f573d85c6a24289ff00663b491c1d338ff3458a"
@@ -8912,11 +8911,6 @@ log-symbols@^4.1.0:
   dependencies:
     chalk "^4.1.0"
     is-unicode-supported "^0.1.0"
-
-lolex@^4.1.0, lolex@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/lolex/-/lolex-4.2.0.tgz#ddbd7f6213ca1ea5826901ab1222b65d714b3cd7"
-  integrity sha512-gKO5uExCXvSm6zbF562EvM+rd1kQDnB9AZBbiQVzf1ZmdDpxUSvpnAaVOP83N/31mRK8Ml8/VE8DMvsAZQ+7wg==
 
 loose-envify@^1.0.0:
   version "1.4.0"
@@ -9465,15 +9459,15 @@ nice-try@^1.0.4:
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
-nise@^1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/nise/-/nise-1.5.2.tgz#b6d29af10e48b321b307e10e065199338eeb2652"
-  integrity sha512-/6RhOUlicRCbE9s+94qCUsyE+pKlVJ5AhIv+jEE7ESKwnbXqulKZ1FYU+XAtHHWE9TinYvAxDUJAb912PwPoWA==
+nise@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/nise/-/nise-4.1.0.tgz#8fb75a26e90b99202fa1e63f448f58efbcdedaf6"
+  integrity sha512-eQMEmGN/8arp0xsvGoQ+B1qvSkR73B1nWSCh7nOt5neMCtwcQVYQGdzQMhcNscktTsWB54xnlSQFzOAPJD8nXA==
   dependencies:
-    "@sinonjs/formatio" "^3.2.1"
+    "@sinonjs/commons" "^1.7.0"
+    "@sinonjs/fake-timers" "^6.0.0"
     "@sinonjs/text-encoding" "^0.7.1"
     just-extend "^4.0.2"
-    lolex "^4.1.0"
     path-to-regexp "^1.7.0"
 
 no-case@^3.0.4:
@@ -11259,18 +11253,17 @@ simple-html-tokenizer@^0.5.8:
   resolved "https://registry.yarnpkg.com/simple-html-tokenizer/-/simple-html-tokenizer-0.5.8.tgz#3417382f75954ee34515cc4fd32d9918e693f173"
   integrity sha512-0Sq4FvLlQEQODVA6PH2MIrc7tzYO0KT2HzzwvaVLYClWgIsuvaNUOrhrAvTi1pZHrcq7GDB4WiI3ukjqBMxcGQ==
 
-sinon@^7.5.0:
-  version "7.5.0"
-  resolved "https://registry.yarnpkg.com/sinon/-/sinon-7.5.0.tgz#e9488ea466070ea908fd44a3d6478fd4923c67ec"
-  integrity sha512-AoD0oJWerp0/rY9czP/D6hDTTUYGpObhZjMpd7Cl/A6+j0xBE+ayL/ldfggkBXUs0IkvIiM1ljM8+WkOc5k78Q==
+sinon@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/sinon/-/sinon-10.0.0.tgz#52279f97e35646ff73d23207d0307977c9b81430"
+  integrity sha512-XAn5DxtGVJBlBWYrcYKEhWCz7FLwZGdyvANRyK06419hyEpdT0dMc5A8Vcxg5SCGHc40CsqoKsc1bt1CbJPfNw==
   dependencies:
-    "@sinonjs/commons" "^1.4.0"
-    "@sinonjs/formatio" "^3.2.1"
-    "@sinonjs/samsam" "^3.3.3"
-    diff "^3.5.0"
-    lolex "^4.2.0"
-    nise "^1.5.2"
-    supports-color "^5.5.0"
+    "@sinonjs/commons" "^1.8.1"
+    "@sinonjs/fake-timers" "^6.0.1"
+    "@sinonjs/samsam" "^5.3.1"
+    diff "^4.0.2"
+    nise "^4.1.0"
+    supports-color "^7.1.0"
 
 slash@^1.0.0:
   version "1.0.0"
@@ -11798,7 +11791,7 @@ supports-color@^2.0.0:
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
   integrity sha1-U10EXOa2Nj+kARcIRimZXp3zJMc=
 
-supports-color@^5.3.0, supports-color@^5.5.0:
+supports-color@^5.3.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.5.0.tgz#e2e69a44ac8772f78a1ec0b35b689df6530efc8f"
   integrity sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==
@@ -12235,7 +12228,7 @@ type-check@~0.3.2:
   dependencies:
     prelude-ls "~1.1.2"
 
-type-detect@4.0.8:
+type-detect@4.0.8, type-detect@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/type-detect/-/type-detect-4.0.8.tgz#7646fb5f18871cfbb7749e69bd39a6388eb7450c"
   integrity sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==
