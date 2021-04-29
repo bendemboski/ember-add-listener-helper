@@ -75,8 +75,30 @@ module.exports = async function () {
           },
         },
       },
-      embroiderSafe(),
-      embroiderOptimized(),
+      embroiderSafe({
+        // https://github.com/embroider-build/embroider/issues/799
+        env: {
+          JOBS: '1',
+        },
+        // https://github.com/embroider-build/embroider/pull/792
+        npm: {
+          devDependencies: {
+            webpack: '^5.0.0',
+          },
+        },
+      }),
+      embroiderOptimized({
+        // https://github.com/embroider-build/embroider/issues/799
+        env: {
+          JOBS: '1',
+        },
+        // https://github.com/embroider-build/embroider/pull/792
+        npm: {
+          devDependencies: {
+            webpack: '^5.0.0',
+          },
+        },
+      }),
     ],
   };
 };
