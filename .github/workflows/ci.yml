@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - 'v*'
+  pull_request: {}
+  schedule:
+    - cron: '0 3 * * *' # daily, at 3am
+
+jobs:
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - run: yarn install --frozen-lockfile
+      - run: yarn lint
+      - run: yarn test:ember
+
+  try-scenarios:
+    name: ${{ matrix.ember-try-scenario }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: true
+      matrix:
+        ember-try-scenario:
+          - ember-lts-3.16
+          - ember-lts-3.20
+          - ember-release
+          - ember-beta
+          - ember-canary
+          - ember-default-with-jquery
+          - embroider-safe
+          - embroider-optimized
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: yarn install --frozen-lockfile
+      - name: test
+        env:
+          EMBER_TRY_SCENARIO: ${{ matrix.ember-try-scenario }}
+        run: yarn ember try:one $EMBER_TRY_SCENARIO

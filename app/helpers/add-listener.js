@@ -1,1 +1,1 @@
-export { default, addListener } from 'ember-add-listener-helper/helpers/add-listener';
+export { default } from 'ember-add-listener-helper/helpers/add-listener';
