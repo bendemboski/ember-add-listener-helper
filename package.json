@@ -20,6 +20,7 @@
     "lint:hbs:fix": "ember-template-lint . --fix",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
+    "release": "dotenv release-it",
     "start": "ember serve",
     "test": "npm-run-all lint test:*",
     "test:ember": "ember test",
@@ -36,6 +37,7 @@
     "@glimmer/tracking": "^1.0.4",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
+    "dotenv-cli": "^4.0.0",
     "ember-auto-import": "^2.2.0",
     "ember-cli": "~3.28.0",
     "ember-cli-dependency-checker": "^3.2.0",
@@ -65,17 +67,37 @@
     "prettier": "^2.3.2",
     "qunit": "^2.16.0",
     "qunit-dom": "^2.0.0",
+    "release-it": "^14.2.1",
+    "release-it-lerna-changelog": "^3.1.0",
     "sinon": "^11.1.2",
     "webpack": "^5.53.0"
   },
   "engines": {
     "node": "12.* || 14.* || >= 16"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "ember": {
     "edition": "octane"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": true
+      }
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    }
   },
   "volta": {
     "node": "14.17.6",
