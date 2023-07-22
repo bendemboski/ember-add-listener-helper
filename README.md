@@ -1,5 +1,4 @@
-ember-add-listener-helper
-==============================================================================
+# ember-add-listener-helper
 
 Easily and safely use `@ember/object/events` via a template helper
 
@@ -7,8 +6,22 @@ Easily and safely use `@ember/object/events` via a template helper
 {{add-listener @publisher 'event' this.onEvent}}
 ```
 
-Usage
-------------------------------------------------------------------------------
+
+## Compatibility
+
+* Ember.js v4.4 or above
+* Ember CLI v4.4 or above
+* Node.js v16 or above
+
+
+## Installation
+
+```
+ember install ember-add-listener-helper
+```
+
+
+## Usage
 
 The `@ember/object/events` methods require careful accounting to avoid leaking
 event listeners, and are especially tricky to use when the subscriber is a
@@ -33,37 +46,21 @@ export default class MyComponent extends Component {
 `@publisher` can be an object with events triggered using `sendEvent` from
 `@ember/objects/events` or using `.trigger()` from the `Ember.Evented` mixin.
 
-Isn't Ember's eventing deprecated?
-------------------------------------------------------------------------------
+
+## Isn't Ember's eventing deprecated?
+
 There is [an RFC](https://github.com/emberjs/rfcs/pull/528) to deprecate Ember's
 eventing. As long as it's not deprecated and removed, this helper eases its use.
 If/when Ember's eventing is removed, this helper may also be deprecated, or may
 switch its implementation to using some other recommended pub/sub eventing
 library.
 
-Compatibility
-------------------------------------------------------------------------------
 
-* Ember.js v3.20 or above
-* Ember CLI v3.20 or above
-* Node.js v12 or above
-
-
-Installation
-------------------------------------------------------------------------------
-
-```
-ember install ember-add-listener-helper
-```
-
-
-Contributing
-------------------------------------------------------------------------------
+## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
 
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).

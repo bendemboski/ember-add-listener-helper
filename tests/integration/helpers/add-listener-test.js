@@ -15,20 +15,20 @@ module('Integration | Helpers | add-listener', function (hooks) {
     });
 
     await render(hbs`{{add-listener this.obj 'thing' this.callback}}`);
-    assert.equal(this.callback.callCount, 0);
+    assert.strictEqual(this.callback.callCount, 0);
 
     sendEvent(this.obj, 'thing', ['arg1', 2]);
-    assert.equal(this.callback.callCount, 1);
+    assert.strictEqual(this.callback.callCount, 1);
     assert.deepEqual(this.callback.lastCall.args, ['arg1', 2]);
 
     sendEvent(this.obj, 'thing', ['anotherArg1', false]);
-    assert.equal(this.callback.callCount, 2);
+    assert.strictEqual(this.callback.callCount, 2);
     assert.deepEqual(this.callback.lastCall.args, ['anotherArg1', false]);
 
     await clearRender();
 
     sendEvent(this.obj, 'thing', ['arg1', 4]);
-    assert.equal(this.callback.callCount, 2);
+    assert.strictEqual(this.callback.callCount, 2);
   });
 
   test('the target can change', async function (assert) {
@@ -40,22 +40,22 @@ module('Integration | Helpers | add-listener', function (hooks) {
     });
 
     await render(hbs`{{add-listener this.obj 'thing' this.callback}}`);
-    assert.equal(this.callback.callCount, 0);
+    assert.strictEqual(this.callback.callCount, 0);
 
     sendEvent(obj1, 'thing', ['arg']);
-    assert.equal(this.callback.callCount, 1);
+    assert.strictEqual(this.callback.callCount, 1);
 
     sendEvent(obj2, 'thing', ['arg']);
-    assert.equal(this.callback.callCount, 1);
+    assert.strictEqual(this.callback.callCount, 1);
 
     this.set('obj', obj2);
     await settled();
 
     sendEvent(obj1, 'thing', ['arg']);
-    assert.equal(this.callback.callCount, 1);
+    assert.strictEqual(this.callback.callCount, 1);
 
     sendEvent(obj2, 'thing', ['arg']);
-    assert.equal(this.callback.callCount, 2);
+    assert.strictEqual(this.callback.callCount, 2);
   });
 
   test('the event can change', async function (assert) {
@@ -66,22 +66,22 @@ module('Integration | Helpers | add-listener', function (hooks) {
     });
 
     await render(hbs`{{add-listener this.obj this.event this.callback}}`);
-    assert.equal(this.callback.callCount, 0);
+    assert.strictEqual(this.callback.callCount, 0);
 
     sendEvent(this.obj, 'event1', ['arg']);
-    assert.equal(this.callback.callCount, 1);
+    assert.strictEqual(this.callback.callCount, 1);
 
     sendEvent(this.obj, 'event2', ['arg']);
-    assert.equal(this.callback.callCount, 1);
+    assert.strictEqual(this.callback.callCount, 1);
 
     this.set('event', 'event2');
     await settled();
 
     sendEvent(this.obj, 'event1', ['arg']);
-    assert.equal(this.callback.callCount, 1);
+    assert.strictEqual(this.callback.callCount, 1);
 
     sendEvent(this.obj, 'event2', ['arg']);
-    assert.equal(this.callback.callCount, 2);
+    assert.strictEqual(this.callback.callCount, 2);
   });
 
   test('the callback can change', async function (assert) {
@@ -93,18 +93,18 @@ module('Integration | Helpers | add-listener', function (hooks) {
     });
 
     await render(hbs`{{add-listener this.obj 'thing' this.callback}}`);
-    assert.equal(this.callback.callCount, 0);
+    assert.strictEqual(this.callback.callCount, 0);
 
     sendEvent(this.obj, 'thing', ['arg']);
-    assert.equal(callback1.callCount, 1);
-    assert.equal(callback2.callCount, 0);
+    assert.strictEqual(callback1.callCount, 1);
+    assert.strictEqual(callback2.callCount, 0);
 
     this.set('callback', callback2);
     await settled();
 
     sendEvent(this.obj, 'thing', ['arg']);
-    assert.equal(callback1.callCount, 1);
-    assert.equal(callback2.callCount, 1);
+    assert.strictEqual(callback1.callCount, 1);
+    assert.strictEqual(callback2.callCount, 1);
   });
 
   test('it handles un-set arguments', async function (assert) {
@@ -142,7 +142,7 @@ module('Integration | Helpers | add-listener', function (hooks) {
     this.set('obj', {});
     await settled();
     sendEvent(this.obj, 'thing', ['arg']);
-    assert.equal(this.callback.callCount, 1);
+    assert.strictEqual(this.callback.callCount, 1);
     assert.deepEqual(this.callback.firstCall.args, ['arg']);
   });
 });
