@@ -43,6 +43,7 @@ export default class MyComponent extends Component {
 }
 ```
 
+
 `@publisher` can be an object with events triggered using `sendEvent` from
 `@ember/objects/events` or using `.trigger()` from the `Ember.Evented` mixin.
 
