@@ -34,7 +34,7 @@ module('Integration | Helpers | add-listener', function (hooks) {
     context.callback = callback;
 
     await render<ThisContext>(
-      hbs`{{add-listener this.context.obj 'thing' this.context.callback}}`
+      hbs`{{add-listener this.context.obj 'thing' this.context.callback}}`,
     );
     assert.strictEqual(callback.callCount, 0);
 
@@ -61,7 +61,7 @@ module('Integration | Helpers | add-listener', function (hooks) {
     context.callback = callback;
 
     await render<ThisContext>(
-      hbs`{{add-listener this.context.obj 'thing' this.context.callback}}`
+      hbs`{{add-listener this.context.obj 'thing' this.context.callback}}`,
     );
     assert.strictEqual(callback.callCount, 0);
 
@@ -90,7 +90,7 @@ module('Integration | Helpers | add-listener', function (hooks) {
     context.callback = callback;
 
     await render<ThisContext>(
-      hbs`{{add-listener this.context.obj this.context.event this.context.callback}}`
+      hbs`{{add-listener this.context.obj this.context.event this.context.callback}}`,
     );
     assert.strictEqual(callback.callCount, 0);
 
@@ -119,7 +119,7 @@ module('Integration | Helpers | add-listener', function (hooks) {
     context.callback = callback1;
 
     await render<ThisContext>(
-      hbs`{{add-listener this.context.obj 'thing' this.context.callback}}`
+      hbs`{{add-listener this.context.obj 'thing' this.context.callback}}`,
     );
     assert.strictEqual(callback1.callCount, 0);
 
@@ -138,7 +138,7 @@ module('Integration | Helpers | add-listener', function (hooks) {
   test('it handles un-set arguments', async function (assert) {
     // Render with nothing set
     await render<ThisContext>(
-      hbs`{{add-listener this.context.obj this.context.event this.context.callback}}`
+      hbs`{{add-listener this.context.obj this.context.event this.context.callback}}`,
     );
 
     // No callback -- make sure no errors are thrown when sending event

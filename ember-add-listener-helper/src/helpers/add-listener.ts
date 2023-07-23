@@ -11,7 +11,7 @@ type PositionalArgs = [
   target?: object | Function | null,
   // eslint-disable-next-line @typescript-eslint/ban-types
   method?: Function,
-  sync?: boolean
+  sync?: boolean,
 ];
 
 interface AddListenerHelperSignature {
