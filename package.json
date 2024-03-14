@@ -31,12 +31,20 @@
     "registry": "https://registry.npmjs.org"
   },
   "release-it": {
+    "hooks": {
+      "before:init": "cp README.md LICENSE.md packages/ember-add-listener-helper/",
+      "after:bump": "pnpm install"
+    },
     "plugins": {
       "@release-it-plugins/lerna-changelog": {
         "infile": "CHANGELOG.md",
         "launchEditor": true
       },
-      "@release-it-plugins/workspaces": true
+      "@release-it-plugins/workspaces": {
+        "workspaces": [
+          "packages/ember-add-listener-helper"
+        ]
+      }
     },
     "git": {
       "tagName": "v${version}"
