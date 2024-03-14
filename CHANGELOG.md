@@ -1,4 +1,13 @@
 
+
+## v1.1.0 (2024-03-14)
+
+#### :house: Internal
+* [#58](https://github.com/bendemboski/ember-add-listener-helper/pull/58) Upgrade tooling ([@bendemboski](https://github.com/bendemboski))
+
+#### Committers: 1
+- Ben Demboski ([@bendemboski](https://github.com/bendemboski))
+
 ## v1.0.0 (2024-03-14)
 
 #### :boom: Breaking Change
