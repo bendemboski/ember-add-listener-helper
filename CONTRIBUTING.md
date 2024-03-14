@@ -13,7 +13,7 @@
 
 ## Building the addon
 
-- `cd ember-add-listener-helper`
+- `cd addon`
 - `pnpm build`
 
 ## Running tests
