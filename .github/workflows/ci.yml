@@ -19,9 +19,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: wyvox/action-setup-pnpm@v3
-      - name: Install Dependencies
-        run: pnpm install
+      - uses: wyvox/action-setup-pnpm@v2
+        with:
+          node-version: 18
       - name: Lint
         run: pnpm lint
       - name: Run Tests
@@ -35,9 +35,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: wyvox/action-setup-pnpm@v3
-      - name: Install Dependencies
-        run: pnpm install
+      - uses: wyvox/action-setup-pnpm@v2
+        with:
+          node-version: 18
+          args: '--no-lockfile'
       - name: Run Tests
         run: pnpm test:ember
         working-directory: ./test-app
@@ -53,6 +54,7 @@ jobs:
       matrix:
         try-scenario:
           - ember-lts-4.8
+          - ember-lts-4.12
           - ember-release
           - ember-beta
           - ember-canary
@@ -61,9 +63,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: wyvox/action-setup-pnpm@v3
-      - name: Install Dependencies
-        run: pnpm install
+      - uses: wyvox/action-setup-pnpm@v2
+        with:
+          node-version: 18
       - name: Run Tests
         run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
         working-directory: ./test-app
