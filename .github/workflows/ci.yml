@@ -19,17 +19,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: yarn
+      - uses: wyvox/action-setup-pnpm@v3
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install
       - name: Lint
-        run: yarn lint
+        run: pnpm lint
       - name: Run Tests
-        run: yarn test:ember
+        run: pnpm test:ember
         working-directory: ./test-app
 
   floating:
@@ -39,14 +35,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: yarn
+      - uses: wyvox/action-setup-pnpm@v3
       - name: Install Dependencies
-        run: yarn install --no-lockfile
+        run: pnpm install
       - name: Run Tests
-        run: yarn test:ember
+        run: pnpm test:ember
         working-directory: ./test-app
 
   try-scenarios:
@@ -68,13 +61,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: yarn
+      - uses: wyvox/action-setup-pnpm@v3
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install
       - name: Run Tests
         run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
         working-directory: ./test-app

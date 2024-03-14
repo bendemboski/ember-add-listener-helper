@@ -1,0 +1,3 @@
+packages:
+  - ember-add-listener-helper
+  - test-app
