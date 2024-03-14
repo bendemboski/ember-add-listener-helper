@@ -30,6 +30,16 @@ glimmer component and the publisher is an argument to that component. Using the
 un/re-registering when arguments change, and unregistering on un-render. All
 you have to do is:
 
+```gjs
+import { addListener } from 'ember-add-listener-helper';
+
+export default <template>
+  {{addListener @publisher 'event' onEvent}}
+</template>;
+```
+
+or
+
 ```hbs
 {{add-listener @publisher 'event' this.onEvent}}
 ```
