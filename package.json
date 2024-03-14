@@ -2,9 +2,9 @@
   "name": "ember-add-listener-helper",
   "version": "0.1.0",
   "private": true,
-  "repository": "",
+  "repository": "https://github.com/bendemboski/ember-add-listener-helper",
   "license": "MIT",
-  "author": "",
+  "author": "Ben Demboski",
   "workspaces": [
     "ember-add-listener-helper",
     "test-app"
@@ -17,12 +17,14 @@
     "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "yarn workspace ember-add-listener-helper run start",
     "start:test-app": "yarn workspace test-app run start",
-    "test": "yarn workspaces run test"
+    "test": "yarn workspaces run test",
+    "release": "dotenv release-it"
   },
   "devDependencies": {
     "@release-it-plugins/lerna-changelog": "^6.0.0",
     "@release-it-plugins/workspaces": "^4.0.0",
     "concurrently": "^8.2.0",
+    "dotenv-cli": "^7.2.1",
     "prettier": "^3.0.0",
     "release-it": "^16.1.3"
   },
