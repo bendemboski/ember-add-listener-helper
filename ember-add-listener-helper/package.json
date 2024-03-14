@@ -1,6 +1,6 @@
 {
   "name": "ember-add-listener-helper",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Easily and safely use `@ember/object/events` via a template helper",
   "keywords": [
     "ember-addon"

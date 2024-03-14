@@ -1,6 +1,6 @@
 {
   "name": "test-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Easily and safely use `@ember/object/events` via a template helper",
   "repository": "https://github.com/bendemboski/ember-add-listener-helper",
@@ -40,7 +40,7 @@
     "@typescript-eslint/parser": "^6.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "concurrently": "^8.0.1",
-    "ember-add-listener-helper": "*",
+    "ember-add-listener-helper": "1.0.0",
     "ember-auto-import": "^2.6.3",
     "ember-cli": "~5.1.0",
     "ember-cli-babel": "^7.26.11",
