@@ -1,8 +1,8 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, clearRender, settled } from '@ember/test-helpers';
-import { hbs } from 'ember-cli-htmlbars';
 import { tracked } from '@glimmer/tracking';
+import addListener from 'ember-add-listener-helper/helpers/add-listener';
 import { sendEvent } from '@ember/object/events';
 import sinon from 'sinon';
 
@@ -12,18 +12,13 @@ class Context {
   @tracked callback?: () => void;
 }
 
-interface ThisContext {
-  context: Context;
-}
-
 module('Integration | Helpers | add-listener', function (hooks) {
   setupRenderingTest(hooks);
 
   let context: Context;
 
-  hooks.beforeEach(function (this: ThisContext) {
+  hooks.beforeEach(function () {
     context = new Context();
-    this.context = context;
   });
 
   test('it works', async function (assert) {
@@ -33,9 +28,36 @@ module('Integration | Helpers | add-listener', function (hooks) {
     context.obj = obj;
     context.callback = callback;
 
-    await render<ThisContext>(
-      hbs`{{add-listener this.context.obj 'thing' this.context.callback}}`,
-    );
+    await render(<template>
+      {{addListener context.obj 'thing' context.callback}}
+    </template>);
+
+    assert.strictEqual(callback.callCount, 0);
+
+    sendEvent(obj, 'thing', ['arg1', 2]);
+    assert.strictEqual(callback.callCount, 1);
+    assert.deepEqual(callback.lastCall.args, ['arg1', 2]);
+
+    sendEvent(obj, 'thing', ['anotherArg1', false]);
+    assert.strictEqual(callback.callCount, 2);
+    assert.deepEqual(callback.lastCall.args, ['anotherArg1', false]);
+
+    await clearRender();
+
+    sendEvent(obj, 'thing', ['arg1', 4]);
+    assert.strictEqual(callback.callCount, 2);
+  });
+
+  test('it works in ember-loose', async function (assert) {
+    const obj = {};
+    const callback = sinon.stub();
+
+    context.obj = obj;
+    context.callback = callback;
+
+    await render(<template>
+      {{addListener context.obj 'thing' context.callback}}
+    </template>);
     assert.strictEqual(callback.callCount, 0);
 
     sendEvent(obj, 'thing', ['arg1', 2]);
@@ -60,9 +82,9 @@ module('Integration | Helpers | add-listener', function (hooks) {
     context.obj = obj1;
     context.callback = callback;
 
-    await render<ThisContext>(
-      hbs`{{add-listener this.context.obj 'thing' this.context.callback}}`,
-    );
+    await render(<template>
+      {{addListener context.obj 'thing' context.callback}}
+    </template>);
     assert.strictEqual(callback.callCount, 0);
 
     sendEvent(obj1, 'thing', ['arg']);
@@ -89,9 +111,9 @@ module('Integration | Helpers | add-listener', function (hooks) {
     context.event = 'event1';
     context.callback = callback;
 
-    await render<ThisContext>(
-      hbs`{{add-listener this.context.obj this.context.event this.context.callback}}`,
-    );
+    await render(<template>
+      {{addListener context.obj context.event context.callback}}
+    </template>);
     assert.strictEqual(callback.callCount, 0);
 
     sendEvent(obj, 'event1', ['arg']);
@@ -118,9 +140,9 @@ module('Integration | Helpers | add-listener', function (hooks) {
     context.obj = obj;
     context.callback = callback1;
 
-    await render<ThisContext>(
-      hbs`{{add-listener this.context.obj 'thing' this.context.callback}}`,
-    );
+    await render(<template>
+      {{addListener context.obj 'thing' context.callback}}
+    </template>);
     assert.strictEqual(callback1.callCount, 0);
 
     sendEvent(obj, 'thing', ['arg']);
@@ -137,9 +159,9 @@ module('Integration | Helpers | add-listener', function (hooks) {
 
   test('it handles un-set arguments', async function (assert) {
     // Render with nothing set
-    await render<ThisContext>(
-      hbs`{{add-listener this.context.obj this.context.event this.context.callback}}`,
-    );
+    await render(<template>
+      {{addListener context.obj context.event context.callback}}
+    </template>);
 
     // No callback -- make sure no errors are thrown when sending event
     const obj = {};
