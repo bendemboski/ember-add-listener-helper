@@ -35,7 +35,7 @@
   },
   "release-it": {
     "hooks": {
-      "before:init": "cp README.md LICENSE.md packages/ember-add-listener-helper/",
+      "before:init": "cp README.md LICENSE.md addon/",
       "after:bump": "pnpm install"
     },
     "plugins": {
@@ -45,7 +45,7 @@
       },
       "@release-it-plugins/workspaces": {
         "workspaces": [
-          "packages/ember-add-listener-helper"
+          "addon"
         ]
       }
     },
